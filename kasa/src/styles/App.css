@@ -1,3 +1,7 @@
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -14,18 +18,82 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  width: auto;
+  background-color: #ffffff;
+  min-height: 5vh;
+  display: flex;
+  align-items: center;
+	justify-content: space-between;
+	margin: 30px 80px 0px 80px;
+  font-size: calc(10px + 1vmin);
+}
+
+.App-header img {
+  display: flex;
+  width: 210px;
+}
+
+.App-header nav {
+  display: flex;
+  align-items:end;
+	justify-content: space-around;
+}
+
+.App-header .App-link {
+  padding-left: 50px;
+}
+
+.App-body {
+  background-color: #ffffff;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(0, 0, 0);
+}
+
+.App-footer {
+  background-color: #000000;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 1vmin);
+  color: rgb(255, 255, 255);
+}
+
+.App-footer img {
+  margin-top: 25px;
+  width: 122px;
 }
 
 .App-link {
-  color: #61dafb;
+  display: flex;
+  color: #FF6060;
+  text-decoration: none;
+}
+
+.App-margin-default {
+  margin: 139px 0px 139px 0px;
+}
+
+.App-color {
+  color: #FF6060;
+}
+
+.App-font-size-xs {
+  font-size: 18px;
+}
+
+.App-font-size-s {
+  font-size: 36px;
+}
+
+.App-font-size-xxl {
+  font-size: 288px;
 }
 
 @keyframes App-logo-spin {
