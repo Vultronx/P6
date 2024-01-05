@@ -1,4 +1,6 @@
 import '../../styles/App.scss';
+import Element from './Element.js';
+
 import { useState } from 'react';
 
 const valuesList = [
@@ -19,7 +21,7 @@ function Dropdown( props ) {
   return (
     <ul className="dropdown">
         {valuesList.map((value) => (
-            <li className="dropdown__title"><p>{value}</p><span className="dropdown__button" onClick={() => setOpen(open ? false : true)}>[ - ]</span>{console.log(open)}</li>
+            <Element />
         ))}
     </ul>
   );
