@@ -138,14 +138,14 @@
     margin: 0px;
   }
   .dropdown__button {
-    width: 7%;
+    min-width: 50px;
     display: flex;
     align-items: center;
     justify-content: end;
     cursor: pointer;
   }
   .dropdown__content {
-    font-size: 16px;
+    font-size: 18px;
     background-color: #F6F6F6;
     list-style-type: none;
     color: #ff8181;
