@@ -21,7 +21,7 @@ function Dropdown( props ) {
   return (
     <ul className="dropdown">
         {valuesList.map((value) => (
-            <Element />
+            <Element v={value}/>
         ))}
     </ul>
   );
