@@ -8,7 +8,7 @@ function Dropdown( props ) {
   return (
     <ul className="dropdown">
         {values.map((value) => (
-            <Element title={value.title} description={value.description}/>
+            <Element id={value.id} title={value.title} description={value.description}/>
         ))}
     </ul>
   );

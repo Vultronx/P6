@@ -6,7 +6,7 @@ function Element( value ) {
   
     return (
         <div>
-            <li className="dropdown__element">
+            <li key={value.id+value.title} className="dropdown__element">
                 <p>
                     {value.title}
                 </p>
@@ -19,7 +19,7 @@ function Element( value ) {
                     {open ? "[ - ]" : "[ + ]"}
                 </span>
             </li>
-            {open ? <li className='dropdown__content dropdown__content--red'>{value.description}</li>:""}
+            {open ? <li key={value.id+"description"} className='dropdown__content dropdown__content--red'>{value.description}</li>:""}
         </div>
     );
 }
