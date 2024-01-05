@@ -1,24 +1,16 @@
-import logo from '../../images/logo.svg';
-import '../../styles/App.css';
+import bannerPicture from '../../images/kalen-emsley.png';
+import Dropdown from '../../components/Dropdown/Dropdown.js';
+import '../../styles/App.scss';
 
 function About() {
   return (
-    <div className="About">
-      <header className="App-body">
-        <img src={logo} className="App-logo" alt="logo" />
+      <main className="App-body">
+          <img src={bannerPicture} alt="Banner_picture" />
         <p>
           Edit this page-component and save to reload.
-        </p> 
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        </p>
+        <Dropdown />
+      </main>
   );
 }
 

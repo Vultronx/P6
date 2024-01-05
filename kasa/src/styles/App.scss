@@ -1,7 +1,3 @@
-* {
-  font-family: "Montserrat", sans-serif;
-}
-
 .App {
   text-align: center;
 }
@@ -26,38 +22,53 @@
 	justify-content: space-between;
 	margin: 30px 80px 0px 80px;
   font-size: calc(10px + 1vmin);
-}
 
-.header__logo {
-  display: flex;
-  width: 210px;
-}
+  .logo {
+    display: flex;
+    width: 210px;
+  }
 
-.header__navbar {
-  display: flex;
-  align-items:end;
-	justify-content: space-around;
-}
+  .navbar {
+    display: flex;
+    align-items:end;
+    justify-content: space-around;
 
-.header__navbar__link {
-  padding-left: 50px;
-}
+    .navbar__link {
+      height: 20px;
+      margin-left: 50px;
+      display: flex;
+      color: #FF6060;
+      text-decoration: none;
+      border-bottom: 1px solid #ffffff;
+    }
 
-.header__navbar__link--base {
-  display: flex;
-  color: #FF6060;
-  text-decoration: none;
+    .navbar__link--active {
+      border-bottom: 1px solid #FF6060;
+    }
+  }
 }
 
 .App-body {
   background-color: #ffffff;
   min-height: 80vh;
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: rgb(0, 0, 0);
+  
+  padding-top: 30px;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.App-body img {
+  width: 100%; ///
+  height: 133px;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 20px;
+  object-fit: cover;
 }
 
 .App-footer {
@@ -104,6 +115,38 @@
 
 .App-font-weight-700 {
   font-weight: 700;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: column;
+
+  padding-left: 80px;
+  padding-right: 120px;
+  .dropdown__title {
+    display: flex;
+    background-color: #FF6060;
+    color: #FFFFFF;
+
+    margin-bottom: 10px;
+    list-style-type: none;
+    padding: 20px 20px 20px 20px;
+    border-radius: 4px;
+  }
+  .dropdown__title p {
+    width: 100%;
+    margin: 0px;
+  }
+  .dropdown__button {
+    width: 6%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    cursor: pointer;
+  }
+  .dropdown__content {
+
+  }
 }
 
 @keyframes App-logo-spin {
