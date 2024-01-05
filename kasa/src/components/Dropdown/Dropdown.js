@@ -1,27 +1,14 @@
 import '../../styles/App.scss';
-import Element from './Element.js';
+import Element from './Element/Element.js';
+import values from "../../assets/values.json";
 
-import { useState } from 'react';
-
-const valuesList = [
-    'Fiabilité',
-    'Respect',
-    'Service',
-    'Sécurité'
-]
+const dataValues = JSON.stringify(values);
 
 function Dropdown( props ) {
-  
-  const [open, setOpen] = useState(false);
-  
-  const handleClick = () => {
-    setOpen(!open);
-  };
-
   return (
     <ul className="dropdown">
-        {valuesList.map((value) => (
-            <Element v={value}/>
+        {values.map((value) => (
+            <Element title={value.title} description={value.description}/>
         ))}
     </ul>
   );
