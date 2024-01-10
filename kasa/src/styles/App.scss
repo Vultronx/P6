@@ -71,6 +71,15 @@
   object-fit: cover;
 }
 
+.App-body .bannerHigh {
+  width: 100%; ///
+  height: 415px;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
 .App-footer {
   background-color: #000000;
   min-height: 20vh;
@@ -117,6 +126,31 @@
   font-weight: 700;
 }
 
+.logementWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: auto;
+  
+  padding: 40px 40px 40px 40px;
+  background-color: #e4e4e4;
+}
+
+.logement {
+  width: 25%;
+  max-width: 340px;
+  height: 340px;
+  margin: 10px auto 10px auto;
+  padding: 20px 20px 20px 20px;
+  background-image: linear-gradient(#FF6060, #863434);
+  color: white;
+  display: flex;
+  
+  justify-content:flex-start;
+  align-items: flex-end;
+
+  border-radius: 5px;
+}
+
 .dropdown {
   display: flex;
   flex-direction: column;
@@ -139,7 +173,7 @@
     margin: 0px;
   }
   .dropdown__button {
-    min-width: 50px;
+    min-width: 9%;
     display: flex;
     align-items: center;
     justify-content: end;
@@ -161,6 +195,6 @@
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(90deg);
   }
 }
