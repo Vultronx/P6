@@ -62,13 +62,33 @@
   padding-right: 80px;
 }
 
-.App-body img {
-  width: 100%; ///
-  height: 133px;
-  display: flex;
-  flex-wrap: wrap;
+.banner {
+  background-color: #000000;
+  position: relative;
+  width: auto;
+  height: 223px;
   border-radius: 20px;
+}
+
+.banner img {
+  width: 100%;
+  height: 223px;
   object-fit: cover;
+  color:#00000025;
+  border-radius: 20px;
+  opacity: 0.6;
+}
+
+.banner p {
+  width: 100%;
+  position: absolute;
+  top: 28%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  color: rgb(255, 255, 255);
+  font-size: 48px;
+  text-align: center;
 }
 
 .App-body .bannerHigh {
@@ -78,6 +98,10 @@
   flex-wrap: wrap;
   border-radius: 20px;
   object-fit: cover;
+}
+
+.App-body a {
+  text-decoration: none;
 }
 
 .App-footer {
@@ -127,19 +151,18 @@
 }
 
 .logementWrapper {
-  display: flex;
-  flex-wrap: wrap;
-  width: auto;
-  
-  padding: 40px 40px 40px 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 60px;
+  grid-auto-rows: minmax(auto, auto);
   background-color: #e4e4e4;
+  
+  padding: 60px 60px 60px 60px;
 }
 
 .logement {
-  width: 25%;
-  max-width: 340px;
-  height: 340px;
-  margin: 10px auto 10px auto;
+  aspect-ratio: 1;
+  //margin: 50px 50px 50px 50px;
   padding: 20px 20px 20px 20px;
   background-image: linear-gradient(#FF6060, #863434);
   color: white;

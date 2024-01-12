@@ -6,7 +6,9 @@ import '../../styles/App.scss';
 function About() {
   return (
       <main className="App-body">
-        <img src={bannerAbout} alt="Banner_picture" />
+        <div className="banner">
+          <img src={bannerAbout} alt="Banner_picture" />
+        </div>
         <ul className="dropdown">
             {values.map((value) => (
               <span><Dropdown id={value.id} title={value.title} description={value.description}/>
