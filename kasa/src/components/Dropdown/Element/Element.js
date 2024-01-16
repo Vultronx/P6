@@ -5,21 +5,23 @@ function Element( data ) {
     const [open, setOpen] = useState(false);
   
     return (
-        <div>
-            <li key={data.id+data.title} className="dropdown__element">
-                <p>
-                    {data.title}
-                </p>
+        <div className="dropdown">
+            <div className="head">
+                <li className="title" key={data.id+data.title}>
+
+                        {data.title}
+
+                </li>
                 <span 
-                    className="dropdown__button" 
+                    className="button" 
                     onClick={
                         () => setOpen(open ? false : true)
                     }
                 >
                     {open ? "[ - ]" : "[ + ]"}
                 </span>
-            </li>
-            {open ? <li key={data.id+"description"} className='dropdown__content dropdown__content--red'>{data.description}</li>:""}
+            </div>
+            {open ? <li className="content" key={data.id+"description"}>{data.description}</li>:""}
         </div>
     );
 }

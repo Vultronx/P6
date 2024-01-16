@@ -18,9 +18,9 @@ function Home() {
         </p> 
           <div className="logementWrapper">
             {logements.map((logement) => (
-              <a to={"/card/"+logement.id}>
+              <Link to={"/card/"+logement.id}>
                 <div className="logement">{logement.title}</div>
-              </a>
+              </Link>
             ))}
           </div>
       </main>
