@@ -24,7 +24,11 @@ function Card( ) {
   console.log(logement)
     return (
       <main className="App-body">
+        {logement.pictures.map((cover) => (
+          <img className="bannerHigh" src={cover} alt="picture" />
+        ))}
         <img className="bannerHigh" src={logement.cover} alt="Banner_picture" />
+        <span>Changer de logement</span>
         <Link to={"/card/"+logements[previous].id}>{"[<]"}</Link>
         <Link to={"/card/"+logements[next].id}>{"[>]"}</Link>
         <div>
