@@ -1,12 +1,16 @@
 import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
-import bannerAbout from '../../images/kalen-emsley.png';
+import { useState } from 'react'
 import Dropdown from '../../components/Dropdown/Dropdown.js';
+import Slideshow from '../../components/Slideshow/Slideshow.js';
 import logements from "../../assets/logements.json";
 import '../../styles/App.scss';
 
+let pictureId = 0
+
 function Card( ) {
   const { logementId } = useParams()
+  const [slideId, slideChange] = useState(0);
   const logement = logements.filter((logement) => logement.id == logementId)[0]
   const current = logements.indexOf(logement);
   
@@ -24,10 +28,17 @@ function Card( ) {
   console.log(logement)
     return (
       <main className="App-body">
-        {logement.pictures.map((cover) => (
-          <img className="bannerHigh" src={cover} alt="picture" />
-        ))}
+        {
+        /*logement.pictures.map((cover) => (
+            <img className="bannerHigh" src={cover} alt="picture" />
+        ))*/
+        }
         <img className="bannerHigh" src={logement.cover} alt="Banner_picture" />
+        {
+          <>          
+            <Slideshow url={logement.pictures[pictureId]}/>
+          </>
+        }
         <span>Changer de logement</span>
         <Link to={"/card/"+logements[previous].id}>{"[<]"}</Link>
         <Link to={"/card/"+logements[next].id}>{"[>]"}</Link>
