@@ -6,13 +6,25 @@ import Slideshow from '../../components/Slideshow/Slideshow.js';
 import logements from "../../assets/logements.json";
 import '../../styles/App.scss';
 
-let pictureId = 0
-
 function Card( ) {
   const { logementId } = useParams()
-  const [slideId, slideChange] = useState(0);
-  const logement = logements.filter((logement) => logement.id == logementId)[0]
-  const current = logements.indexOf(logement);
+  , logement = logements.filter((logement) => logement.id == logementId)[0]
+  , current = logements.indexOf(logement)
+  , previousHandleClick = (e) => {
+    if (pictureId > 0)
+      pictureId--
+    else
+      pictureId = logement.pictures.length - 1
+    setPictureId(pictureId)
+  }
+  , nextHandleClick = e => {
+    if (pictureId < logement.pictures.length - 1)
+      pictureId++
+    else
+      pictureId = 0;
+    setPictureId(pictureId)
+  }
+  let [pictureId, setPictureId] = useState(0)
   
   let previous = 0;
   let next = 0;
@@ -29,21 +41,14 @@ function Card( ) {
     return (
       <main className="App-body">
         {
-        /*logement.pictures.map((cover) => (
-            <img className="bannerHigh" src={cover} alt="picture" />
-        ))*/
+        <>
+          <Slideshow url={logement.pictures[pictureId]} />
+        </>
         }
-        <img className="bannerHigh" src={logement.cover} alt="Banner_picture" />
-        {
-          <>          
-            <Slideshow url={logement.pictures[pictureId]}/>
-          </>
-        }
-        <span>Changer de logement</span>
-        <Link to={"/card/"+logements[previous].id}>{"[<]"}</Link>
-        <Link to={"/card/"+logements[next].id}>{"[>]"}</Link>
+        <button onClick={e => {previousHandleClick(e)}}>{"[<]"}</button>
+        <button onClick={e => {nextHandleClick(e)}}>{"[>]"}</button>
         <div>
-            [{previous}] [{current}] [{next}] {logement.title}
+            {logement.title}
         </div>
         <div>
             <img className="host-picture" src={logement.host.picture} />
@@ -68,8 +73,18 @@ function Card( ) {
               </>
             }
         </ul>
+
+        <hr />
+        <span className="text-center">Changer de logement</span>
+        <div className="text-center">
+        <Link to={"/card/" + logements[previous].id}>{"[<]"}</Link>
+        <Link to={"/card/" + logements[next].id}>{"[>]"}</Link>
+        </div>
+        <div className="text-center">
+            [{previous}] <span className="text-blue">[{current}]</span> [{next}]
+        </div>
       </main>
-  );
+    );
 }
 
 export default Card;
