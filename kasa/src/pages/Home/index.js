@@ -12,14 +12,13 @@ function Home() {
           <img src={bannerHome} alt="Banner_picture" />
           <p>Chez vous, partout et ailleurs</p>
         </div>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit the <code>src/App.js</code> file and save to reload.
-        </p> 
           <div className="logementWrapper">
             {logements.map((logement) => (
-              <Link to={"/card/"+logement.id}>
-                <div className="logement">{logement.title}</div>
+              <Link className="logementLink" to={"/card/"+logement.id}>
+                <div className="logement">
+                  <img className="logementCover" src={logement.cover}/>
+                  <div className="logementTitle">{logement.title}</div>
+                </div>
               </Link>
             ))}
           </div>
