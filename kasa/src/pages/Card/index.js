@@ -1,3 +1,4 @@
+import { redirect } from "react-router-dom"
 import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import { useState } from 'react'
@@ -8,8 +9,11 @@ import '../../styles/App.scss';
 
 function Card( ) {
   const { logementId } = useParams()
-  , logement = logements.filter((logement) => logement.id == logementId)[0]
-  , current = logements.indexOf(logement)
+  const logement = logements.filter((logement) => logement.id == logementId)[0]
+  console.log(logement);
+  /*if (!logement)
+    return redirect("/error")*/
+  const current = logements.indexOf(logement)
   , previousHandleClick = (e) => {
     if (pictureId > 0)
       pictureId--

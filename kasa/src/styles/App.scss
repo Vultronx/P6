@@ -45,13 +45,29 @@
       align-items: flex-end;
       color: #FF6060;
       text-decoration: none;
-      border-bottom: 1px solid #ffffff;
+      font-size: 24px;
     }
 
     .navbar__link--active {
-      border-bottom: 1px solid #FF6060;
+      text-decoration: underline;
+      text-underline-position: auto;
     }
   }
+}
+
+.Error {
+  display: flex;
+  width: auto;
+  background-color: #ffffff;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(0, 0, 0);
+  
+  margin-top: 30px;
+  margin-left: var(--main-margin);
+  margin-right: var(--main-margin);
 }
 
 .App-body {
@@ -86,7 +102,7 @@
 }
 
 .banner p {
-  width: 100%;
+  width: 90%;
   position: absolute;
   top: 28%;
   left: 50%;
@@ -159,19 +175,21 @@
 .logementWrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
+  grid-gap: 40px;
   grid-auto-rows: minmax(auto, auto);
   background-color: #e4e4e4;
   
-  padding: 20px 20px 20px 20px;
-  margin-top: 20px;
-  margin-bottom: 60px;
+  padding: 40px;
+  padding-top: 40px;
+  margin-top: 40px;
+  margin-bottom: 40px;
   justify-items: center;
   border-radius: 25px;
 }
 
 .logement {
-  height: 168px; 
+  width: 100%;
+  height: 340px; 
   background-image: linear-gradient(#ffffff, #000000ab);
   border-radius: 10px;
   
@@ -181,8 +199,8 @@
 
 .logementCover {
   position: absolute;
-  height: 168px;
-  width: 168px;
+  width: 100%;
+  height: 340px;
   //margin: 50px 50px 50px 50px;
   //padding: 20px 20px 20px 20px;
   color: white;
@@ -194,15 +212,17 @@
 
 .logementTitle {
   display: flex;
-  width: 128px;
+  position: absolute;
+  width: auto;
   height: auto;
-  position: relative;
   margin: 20px;
   font-size: 18px;
+  line-height: 150%;
 }
 
 .logementLink {
-  width: 168px;
+  position: relative;
+  width: 100%;
   height: auto;
   display: flex;
   color: #ffffff;
@@ -300,6 +320,38 @@
     padding: 20px 20px 20px 20px;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
+}
+
+.dropdown .flipToDown, .flipToUp {
+  user-select: none;
+}
+
+.dropdown .flipToDown:hover {
+  animation: flipToDown 1 0.25s forwards;
+  user-select: none;
+}
+
+.dropdown .flipToUp:hover {
+  animation: flipToUp 1 0.25s forwards;
+  user-select: none;
+}
+
+@keyframes flipToDown {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-180deg);
+  }
+}
+
+@keyframes flipToUp {
+  from {
+    transform: rotate(-180deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
 }
 
 .host-picture {
@@ -401,6 +453,79 @@
   }
 }
 
+@media screen and (max-width: 1440px) {
+  .logementWrapper {
+    padding: 36px;
+    gap: 36px;
+    row-gap: 36px;
+  }
+  .logement {
+    width: 100%;
+    height: 300px;
+  }
+  .logementCover {
+    width: 100%;
+    height: 300px;
+  }
+  .logementTitle {
+    position: absolute;
+    width: auto;
+  }
+  .logementLink {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .logementWrapper {
+    padding: 36px;
+    gap: 36px;
+    row-gap: 36px;
+  }
+  .logement {
+    width: 100%;
+    height: 220px;
+  }
+  .logementCover {
+    width: 100%;
+    height: 220px;
+  }
+  .logementTitle {
+    position: absolute;
+    width: auto;
+  }
+  .logementLink {
+    width: 100%;
+  }  
+}
+
+@media screen and (max-width: 1024px) {
+  .logementWrapper {
+    padding: 28px;
+    gap: 28px;
+    row-gap: 28px;
+  }
+  .logement {
+    width: 100%;
+    height: 160px;
+  }
+  .logementCover {
+    width: 100%;
+    height: 160px;
+  }
+  .logementTitle {
+    position: absolute;
+    width: auto;
+  }
+  .logementLink {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 920px) {
+
+}
+
 @media screen and (max-width: 800px) {
   :root {
     --main-margin: 20px;
@@ -412,23 +537,30 @@
   .header .logo {
     width: 145px;
   }
-  .navbar__link {
+  .header .navbar .navbar__link {
     text-transform: uppercase;
+    font-size: 12px;
   }
   .banner {
     height: 111px;
+    border-radius: 10px;
   }
   .banner img {
     height: 100%;
+    border-radius: 10px;
   }
   .banner p {
-    width:88%;
-    top: 32%;
+    width:186px;
+    top: 28%;
+    left: 110px;
     font-size: 24px;
     text-align: left;
   }
-  .logementWrapper {
-    padding: 0px;
+  .logementWrapper {  
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 0px;  
+    grid-gap: 20px;
     background-color: #FFFFFF; 
     grid-template-columns: repeat(1, 1fr);
   }
@@ -439,9 +571,10 @@
   .logementCover {
     height: 255px;
     width: calc(100% - 40px);
+    width: 100%;
   }
   .logementTitle {
-    width: 100%;
+    width: auto;
   }
   .logementLink {
     width: 100%;

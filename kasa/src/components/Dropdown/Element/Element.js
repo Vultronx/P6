@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import arrow from '../../../images/arrow_up_24px.png';
 
 function Element( data ) {
   
@@ -18,7 +19,7 @@ function Element( data ) {
                         () => setOpen(open ? false : true)
                     }
                 >
-                    {open ? "[ - ]" : "[ + ]"}
+                    {open ? <img className="flipToDown" src={arrow}></img> : <img className="flipToUp" src={arrow}></img>}
                 </span>
             </div>
             {open ? <li className="content" key={data.id+"description"}>{data.description}</li>:""}
