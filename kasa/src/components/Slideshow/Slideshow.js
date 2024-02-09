@@ -6,9 +6,7 @@ function Slideshow( picture ) {
 
 
     return (
-        <div>
-            <img className="bannerHigh" src={picture.url} alt="picture" />
-        </div>
+        <img className="bannerHigh" src={picture.url} alt="picture" />
     )
 }
 

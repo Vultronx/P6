@@ -45,48 +45,60 @@ function Card( ) {
     return (
       <main className="App-body">
         {
-        <>
-          <Slideshow url={logement.pictures[pictureId]} />
-        </>
+          <div className="slideshow">
+            <Slideshow url={logement.pictures[pictureId]} />
+            <button className="card sliderLeftButton" onClick={e => {previousHandleClick(e)}}>{""}</button>
+            <button className="card sliderRightButton" onClick={e => {nextHandleClick(e)}}>{""}</button>
+          </div>
         }
-        <button onClick={e => {previousHandleClick(e)}}>{"[<]"}</button>
-        <button onClick={e => {nextHandleClick(e)}}>{"[>]"}</button>
-        <div>
-            {logement.title}
+        <div className="card">
+          <div className="card head">
+            <div>
+              <div className="card title">
+                  {logement.title}
+              </div>
+              <div className="card location">
+                  {logement.location}
+              </div>
+              <div className="card tags">
+                  {
+                    logement.tags.map((tag) => (
+                      <div key={"tag_"+logement.tags.indexOf(tag)} className="card tag">{tag}</div>)
+                    )
+                  }
+              </div>
+            </div>
+            <div className="card host">
+              <div className="card name">
+                  <p>{logement.host.name}</p>
+                  <img className="host-picture" src={logement.host.picture} />
+              </div>
+              <div>
+                  {logement.rating}{" étoiles"}
+              </div>
+            </div>
+          </div>
+          <div className="card foot">
+            <ul className="card description">
+                {
+                  <>
+                    <Dropdown id={logement.id} title={"Description"} description={logement.description}/>
+                    <Dropdown id={logement.id} title={"Equipements"} description={logement.equipments}/>
+                  </>
+                }
+            </ul>
+          </div>
         </div>
-        <div>
-            <img className="host-picture" src={logement.host.picture} />
-            {logement.host.name}
-        </div>
-        <div>
-            {logement.location}
-        </div>
-        
-        <div>
-            {logement.tags}
-        </div>
-        
-        <div>
-            {logement.rating}
-        </div>
-        <ul className="card">
-            {
-              <>
-                <Dropdown id={logement.id} title={"Description"} description={logement.description}/>
-                <Dropdown id={logement.id} title={"Equipements"} description={logement.equipments}/>
-              </>
-            }
-        </ul>
-
         <hr />
-        <span className="text-center">Changer de logement</span>
+        <span className="text-center">Choix du logement</span>
         <div className="text-center">
         <Link to={"/card/" + logements[previous].id}>{"[<]"}</Link>
         <Link to={"/card/" + logements[next].id}>{"[>]"}</Link>
         </div>
         <div className="text-center">
-            [{previous}] <span className="text-blue">[{current}]</span> [{next}]
+        <Link to={"/card/" + logements[previous].id}>{"[<]  "}</Link>[{previous}] <span className="text-blue">[{current}]</span> [{next}]<Link to={"/card/" + logements[next].id}>{"  [>]"}</Link>
         </div>
+        <br />
       </main>
     );
 }

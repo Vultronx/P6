@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+  
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
 :root {
   --main-margin: 100px;
   --main-header-margin: 50px;
@@ -233,12 +239,117 @@
 }
 
 // En cours
+.slideshow {
+  position: relative;
+}
 
 .card {
   padding: 0px;
   display: flex;
+  flex-direction: column;
+  //justify-content: space-between;
+  //gap: 80px;
+ }
+
+ .card.sliderLeftButton {
+  width: 48px;
+  height: 80px;
+  position: absolute;
+  top: 175px;
+  left: 40px;
+  background: url(../images/arrow_left.png);
+  border: none;
+ } 
+
+ .card.sliderRightButton {
+  width: 48px;
+  height: 80px;
+  position: absolute;
+  top: 175px;
+  right: 40px;
+  background: url(../images/arrow_right.png);
+  border: none;
+ }
+
+ .card .description {
+  width: 100%;
+  padding: 0px;
+  display: flex;
   justify-content: space-between;
+  flex-direction: row;
   gap: 80px;
+ }
+
+ .card.head {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+ }
+
+ .card.foot {
+  display: flex;
+  flex-direction: column;
+ }
+
+ .card.title {
+  
+  color: #FF6060;
+  font-size: 36px;
+  font-weight: bold;
+ }
+
+ .card.host {
+ }
+
+ .card.name {
+  width: 167px;
+  height: 64px;
+  display: flex;
+  flex-direction: row;
+  color: #FF6060;
+  font-size: 18px;
+ }
+
+ .card.name p {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-align: end;
+  font-size: 18px;
+  line-height: 26px;
+ }
+
+ .card.name img {
+  width: 64px;
+  height: 64px;
+  padding-left: 8px;
+ }
+
+ .card.location {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  color: #FF6060;
+  font-size: 18px;
+ }
+
+ .card.tags {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 10px;
+ }
+
+ .card.tag {
+  min-width: 103px;
+  padding: 5px 16px;
+  color: white;
+  background-color: #FF6060;
+  border-radius: 12px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
  }
 
 .about {
@@ -251,10 +362,15 @@
   padding: 0px;
 
   list-style-type: none;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  //margin-top: 30px;
+  //margin-bottom: 30px;
 
   //Propriétés
+}
+
+.about .dropdown {
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .card .dropdown{
@@ -263,10 +379,6 @@
 
 .about .dropdown {
   width: auto;
-}
-
-.dropdown li {
-
 }
 
 .dropdown p {
@@ -286,7 +398,7 @@
 }
 
 .card .dropdown .head {
-  padding: 16px 12px 16px 12px;
+  padding: 10px;
   border-radius: 10px;
 }
 
@@ -313,6 +425,7 @@
 
 .dropdown .content {
   display: flex;
+  flex-direction: column;
     font-size: 18px;
     background-color: #F6F6F6;
     list-style-type: none;
@@ -323,17 +436,18 @@
 }
 
 .dropdown .flipToDown, .flipToUp {
-  user-select: none;
 }
 
-.dropdown .flipToDown:hover {
+.dropdown .flipToDown {
   animation: flipToDown 1 0.25s forwards;
-  user-select: none;
 }
 
-.dropdown .flipToUp:hover {
+.dropdown .flipToUp {
   animation: flipToUp 1 0.25s forwards;
-  user-select: none;
+}
+
+.dropdown .flipToDown:not(:hover) {
+  transform: rotate(-180deg);
 }
 
 @keyframes flipToDown {
@@ -497,6 +611,11 @@
   .logementLink {
     width: 100%;
   }  
+  .card.tag {
+    min-width: 96px;
+    font-size: 12px;
+    padding: 5px 14px;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -520,13 +639,26 @@
   .logementLink {
     width: 100%;
   }
+  .card.tag {
+    min-width: 84px;
+    font-size: 11px;
+    padding: 5px 12px;
+  }
 }
 
-@media screen and (max-width: 920px) {
-
+@media screen and (max-width: 960px) {
+  .card .description {
+    gap: 20px;
+  }
+  .card.tag {
+    border-radius: 10px;
+  }
+  .card.head {
+    flex-direction: column;
+  }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 960px) {
   :root {
     --main-margin: 20px;
     --main-header-margin: 26px;
@@ -555,6 +687,33 @@
     left: 110px;
     font-size: 24px;
     text-align: left;
+  }
+  .card {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+  }
+  .card .dropdown {
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .card .dropdown .head {
+    padding: 0px 12px;
+    border-radius: 5px;
+  }
+  .card .dropdown .title {
+    font-size: 13px;
+  }
+  .dropdown .head {
+    height: 30px;
+  }
+  .dropdown .content {
+    font-size: 13px;
+  }
+  .dropdown .button img {
+    width: 20px;
+    height: 20px;
   }
   .logementWrapper {  
     margin-top: 20px;
