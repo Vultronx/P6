@@ -5,6 +5,8 @@ import { useState } from 'react'
 import Dropdown from '../../components/Dropdown/Dropdown.js';
 import Slideshow from '../../components/Slideshow/Slideshow.js';
 import logements from "../../assets/logements.json";
+import starColor from "../../images/star_color.png";
+import starGrey from "../../images/star_grey.png";
 import '../../styles/App.scss';
 
 function Card( ) {
@@ -28,6 +30,22 @@ function Card( ) {
       pictureId = 0;
     setPictureId(pictureId)
   }
+  let rating = [];
+  let ratingLength = 0;
+  for (let i=0; i<logement.rating; i++) {
+    ratingLength = rating.push(true);
+  }
+  for (let i=0; i<5-logement.rating; i++) {
+    ratingLength = rating.push(false);
+  }
+  function Test() {
+    //for (let i=0; i<logement.rating; i++) {
+    return <span className="card star">*</span>;
+  }
+    //rating.appendChild(<img src="../../images/star_color.png"></img>);
+
+    //ratingType = type === 'true' ? '<img src="star_color.png"></img>' : '<img src="start_grey.png"></img>';
+
   let [pictureId, setPictureId] = useState(0)
   
   let previous = 0;
@@ -47,8 +65,16 @@ function Card( ) {
         {
           <div className="slideshow">
             <Slideshow url={logement.pictures[pictureId]} />
-            <button className="card sliderLeftButton" onClick={e => {previousHandleClick(e)}}>{""}</button>
-            <button className="card sliderRightButton" onClick={e => {nextHandleClick(e)}}>{""}</button>
+            {
+              (logement.pictures != 1) ?
+              <>
+                <button className="card sliderLeftButton" onClick={e => {previousHandleClick(e)}}>{""}</button>
+                <button className="card sliderRightButton" onClick={e => {nextHandleClick(e)}}>{""}</button>
+                <span class="card slideId">{(pictureId+1)+'/'+logement.pictures.length}</span>
+              </>
+              :
+              <></>
+            }
           </div>
         }
         <div className="card">
@@ -73,8 +99,17 @@ function Card( ) {
                   <p>{logement.host.name}</p>
                   <img className="host-picture" src={logement.host.picture} />
               </div>
-              <div>
-                  {logement.rating}{" étoiles"}
+              <div className="card star">
+                  {
+                    rating.map((star) => (
+                      <div className="card star">
+                      {
+                        star ? <img src={starColor}></img> : <img src={starGrey}></img>
+                      }
+                      </div>
+                    ))
+                  }
+                  
               </div>
             </div>
           </div>
@@ -91,10 +126,6 @@ function Card( ) {
         </div>
         <hr />
         <span className="text-center">Choix du logement</span>
-        <div className="text-center">
-        <Link to={"/card/" + logements[previous].id}>{"[<]"}</Link>
-        <Link to={"/card/" + logements[next].id}>{"[>]"}</Link>
-        </div>
         <div className="text-center">
         <Link to={"/card/" + logements[previous].id}>{"[<]  "}</Link>[{previous}] <span className="text-blue">[{current}]</span> [{next}]<Link to={"/card/" + logements[next].id}>{"  [>]"}</Link>
         </div>

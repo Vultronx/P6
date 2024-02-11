@@ -271,6 +271,19 @@
   border: none;
  }
 
+ .card.slideId {
+  width: 100%;
+  position: absolute;
+  bottom: 32px;
+  left: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+ }
+
  .card .description {
   width: 100%;
   padding: 0px;
@@ -281,7 +294,7 @@
  }
 
  .card.head {
-  margin-top: 20px;
+  margin-top: 30px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -303,12 +316,13 @@
  }
 
  .card.name {
-  width: 167px;
+  width: 165px;
   height: 64px;
   display: flex;
   flex-direction: row;
   color: #FF6060;
   font-size: 18px;
+  margin-bottom: 30px
  }
 
  .card.name p {
@@ -318,6 +332,7 @@
   text-align: end;
   font-size: 18px;
   line-height: 26px;
+  font-weight: bold;
  }
 
  .card.name img {
@@ -326,11 +341,23 @@
   padding-left: 8px;
  }
 
+ .card.star {
+  width: 25px;
+  height: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+ }
+
+ .card.star img {
+ }
+
  .card.location {
   padding-top: 10px;
   padding-bottom: 20px;
   color: #FF6060;
   font-size: 18px;
+  font-weight: bold;
  }
 
  .card.tags {
