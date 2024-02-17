@@ -12,7 +12,8 @@ import '../../styles/App.scss';
 function Card( ) {
   const { logementId } = useParams()
   const logement = logements.filter((logement) => logement.id == logementId)[0]
-  console.log(logement);
+  /*if !logement 
+  console.log(logement);*/
   /*if (!logement)
     return redirect("/error")*/
   const current = logements.indexOf(logement)

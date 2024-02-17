@@ -1,0 +1,472 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body
+	font-family: 'Montserrat', sans-serif
+	--main-margin: 100px 
+	--main-header-margin: 50px 
+
+.App 
+	text-align: center 
+
+.App-logo 
+	height: 40vmin 
+	pointer-events: none 
+
+@media 
+	(prefers-reduced-motion 
+		&: 
+			no-preference) 
+.App-logo {
+    animation: App-logo-spin infinite 20s linear 
+} 
+.header 
+		width: auto 
+		background-color: #ffffff 
+		min-height: 5vh 
+		display: flex 
+		align-items: center 
+		justify-content: space-between 
+		margin: 30px var(--main-margin) 0px var(--main-margin) 
+		font-size: calc(10px + 1vmin) 
+.logo {
+    display: flex 
+	width: 210px 
+} 
+.Error 
+			display: flex 
+			width: auto 
+			background-color: #ffffff 
+			flex-direction: column 
+			align-items: center 
+			justify-content: center 
+			font-size: calc(10px + 2vmin) 
+			color: rgb(0, 0, 0) 
+			margin-top: 30px 
+			margin-left: var(--main-margin) 
+			margin-right: var(--main-margin) 
+	@keyframes 
+		flipToUp 
+			from {
+    transform: rotate(-180deg) 
+	.host-picture 
+		border-radius: 100% 
+	@media 
+		screen 
+			and 
+				(max-width 
+					&: 
+						1440px) 
+							.logementWrapper {
+    padding: 36px 
+							gap: 36px 
+							row-gap: 36px 
+						1280px) 
+							.logementWrapper {
+    padding: 36px 
+							gap: 36px 
+							row-gap: 36px 
+						1024px) 
+							.logementWrapper {
+    padding: 28px 
+							gap: 28px 
+							row-gap: 28px 
+						960px) 
+							.card .description {
+    gap: 20px 
+							: root {
+    --main-margin: 20px 
+							--main-header-margin: 26px 
+.navbar 
+	display: flex 
+	align-items: end 
+	justify-content: space-around 
+	.navbar__link {
+      height: 20px 
+	margin-left: var(--main-header-margin) 
+	display: flex 
+	align-items: flex-end 
+	color: #FF6060 
+	text-decoration: none 
+	font-size: 24px 
+.navbar__link--active 
+	text-decoration: underline 
+	text-underline-position: auto 
+.App-body 
+	width: auto 
+	background-color: #ffffff 
+	flex-direction: column 
+	align-items: center 
+	justify-content: center 
+	font-size: calc(10px + 2vmin) 
+	color: rgb(0, 0, 0) 
+	margin-top: 30px 
+	margin-left: var(--main-margin) 
+	margin-right: var(--main-margin) 
+	.bannerHigh 
+		width: 100% 
+		///
+  height: 415px 
+		display: flex 
+		flex-wrap: wrap 
+		border-radius: 20px 
+		object-fit: cover 
+	a 
+		text-decoration: none 
+.banner 
+	background-color: #000000 
+	position: relative 
+	width: auto 
+	height: 223px 
+	border-radius: 25px 
+	height: 111px 
+	border-radius: 10px 
+	img 
+		width: 100% 
+		height: 100% 
+		object-fit: cover 
+		color: #00000025 
+		border-radius: 25px 
+		opacity: 0.6 
+		height: 100% 
+		border-radius: 10px 
+	p 
+		width: 90% 
+		position: absolute 
+		top: 28% 
+		left: 50% 
+		transform: translate(-50%, -50%) 
+		color: rgb(255, 255, 255) 
+		font-size: 48px 
+		text-align: center 
+		width: 186px 
+		top: 28% 
+		left: 110px 
+		font-size: 24px 
+		text-align: left 
+.App-footer 
+	background-color: #000000 
+	min-height: 20vh 
+	display: flex 
+	flex-direction: column 
+	align-items: center 
+	justify-content: center 
+	font-size: calc(10px + 1vmin) 
+	color: rgb(255, 255, 255) 
+	img 
+		margin-top: 25px 
+		width: 122px 
+		padding-top: 44px 
+	p 
+		width: 120px 
+		text-align: center 
+		padding-bottom: 44px 
+.App-link 
+	display: flex 
+	color: #FF6060 
+	text-decoration: none 
+.App-margin-default 
+	margin: 139px 0px 139px 0px 
+.App-color 
+	color: #FF6060 
+.App-font-size-xs 
+	font-size: 18px 
+.App-font-size-s 
+	font-size: 36px 
+.App-font-size-xxl 
+	font-size: 288px 
+.App-font-weight-700 
+	font-weight: 700 
+.logementWrapper 
+	display: grid 
+	grid-template-columns: repeat(3, 1fr) 
+	grid-gap: 40px 
+	grid-auto-rows: minmax(auto, auto) 
+	background-color: #e4e4e4 
+	padding: 40px 
+	padding-top: 40px 
+	margin-top: 40px 
+	margin-bottom: 40px 
+	justify-items: center 
+	border-radius: 25px 
+	margin-top: 20px 
+	margin-bottom: 20px 
+	padding: 0px 
+	grid-gap: 20px 
+	background-color: #FFFFFF 
+	grid-template-columns: repeat(1, 1fr) 
+.logement 
+	width: 100% 
+	height: 340px 
+	background-image: linear-gradient(#ffffff, #000000ab) 
+	border-radius: 10px 
+	display: flex 
+	align-items: flex-end 
+	width: 100% 
+	height: 300px 
+	width: 100% 
+	height: 220px 
+	width: 100% 
+	height: 160px 
+	width: 100% 
+	height: 255px 
+.logementCover 
+	position: absolute 
+	width: 100% 
+	height: 340px 
+	//margin: 50px 50px 50px 50px 
+	//padding: 20px 20px 20px 20px 
+	color: white 
+	opacity: 0.33 
+	border-radius: 10px 
+	object-fit: cover 
+	display: flex 
+	width: 100% 
+	height: 300px 
+	width: 100% 
+	height: 220px 
+	width: 100% 
+	height: 160px 
+	height: 255px 
+	width: calc(100% - 40px) 
+	width: 100% 
+.logementTitle 
+	display: flex 
+	position: absolute 
+	width: auto 
+	height: auto 
+	margin: 20px 
+	font-size: 18px 
+	line-height: 150% 
+	position: absolute 
+	width: auto 
+	position: absolute 
+	width: auto 
+	position: absolute 
+	width: auto 
+	width: auto 
+.logementLink 
+	position: relative 
+	width: 100% 
+	height: auto 
+	display: flex 
+	color: #ffffff 
+	text-decoration: none 
+	border-radius: 10px 
+	object-fit: cover 
+	align-items: flex-end 
+	width: 100% 
+	width: 100% 
+	width: 100% 
+	width: 100% 
+	height: 255px 
+// 
+	En 
+		cours 
+			.slideshow 
+				position: relative 
+.card 
+	padding: 0px 
+	display: flex 
+	flex-direction: column 
+	//justify-content: space-between 
+	//gap: 80px 
+	flex-wrap: wrap 
+	justify-content: space-around 
+	gap: 20px 
+	&.sliderLeftButton 
+		width: 48px 
+		height: 80px 
+		position: absolute 
+		top: 175px 
+		left: 40px 
+		background: url(../images/arrow_left.png) 
+		border: none 
+	&.sliderRightButton 
+		width: 48px 
+		height: 80px 
+		position: absolute 
+		top: 175px 
+		right: 40px 
+		background: url(../images/arrow_right.png) 
+		border: none 
+	&.slideId 
+		width: 100% 
+		position: absolute 
+		bottom: 32px 
+		left: 0px 
+		display: flex 
+		flex-direction: row 
+		justify-content: center 
+		color: white 
+		font-size: 18px 
+		font-weight: 500 
+	.description 
+		width: 100% 
+		padding: 0px 
+		display: flex 
+		justify-content: space-between 
+		flex-direction: row 
+		gap: 80px 
+	&.head 
+		margin-top: 30px 
+		display: flex 
+		flex-direction: row 
+		justify-content: space-between 
+		flex-direction: column 
+	&.foot 
+		display: flex 
+		flex-direction: column 
+	&.title 
+		color: #FF6060 
+		font-size: 36px 
+		font-weight: bold 
+	&.host 
+	&.name 
+		width: 165px 
+		height: 64px 
+		display: flex 
+		flex-direction: row 
+		color: #FF6060 
+		font-size: 18px 
+		margin-bottom: 30px 
+		p 
+			width: 100% 
+			display: flex 
+			align-items: center 
+			text-align: end 
+			font-size: 18px 
+			line-height: 26px 
+			font-weight: bold 
+		img 
+			width: 64px 
+			height: 64px 
+			padding-left: 8px 
+	&.star 
+		width: 25px 
+		height: 24px 
+		display: flex 
+		flex-wrap: wrap 
+		gap: 10px 
+		img 
+	&.location 
+		padding-top: 10px 
+		padding-bottom: 20px 
+		color: #FF6060 
+		font-size: 18px 
+		font-weight: bold 
+	&.tags 
+		display: flex 
+		flex-direction: row 
+		justify-content: flex-start 
+		gap: 10px 
+	&.tag 
+		min-width: 103px 
+		padding: 5px 16px 
+		color: white 
+		background-color: #FF6060 
+		border-radius: 12px 
+		font-size: 14px 
+		display: flex 
+		justify-content: center 
+		flex-direction: row 
+		min-width: 96px 
+		font-size: 12px 
+		padding: 5px 14px 
+		min-width: 84px 
+		font-size: 11px 
+		padding: 5px 12px 
+		border-radius: 10px 
+	.dropdown 
+		width: 50% 
+		width: 100% 
+		margin-top: 0px 
+		margin-bottom: 0px 
+		.head 
+			padding: 10px 
+			border-radius: 10px 
+			padding: 0px 12px 
+			border-radius: 5px 
+		.title 
+			display: flex 
+			align-items: center 
+			font-size: 18px 
+			font-size: 13px 
+.about 
+	padding: 0px 
+	margin: 40px 90px 
+	.dropdown 
+		margin-bottom: 30px 
+		margin-top: 30px 
+		width: auto 
+		.head 
+			padding: 10px 16px 10px 16px 
+			border-radius: 6px 
+		.title 
+			font-size: 26px 
+.dropdown 
+	margin: 0px 
+	padding: 0px 
+	list-style-type: none 
+	//margin-top: 30px 
+	//margin-bottom: 30px 
+	p 
+		margin: 0px 
+	.head 
+		width: auto 
+		height: auto 
+		padding: 20px 20px 20px 20px 
+		display: flex 
+		justify-content: space-between 
+		background-color: #FF6060 
+		color: #FFFFFF 
+		border-radius: 6px 
+		height: 30px 
+	.button 
+		display: flex 
+		align-items: center 
+		cursor: pointer 
+		img 
+			width: 20px 
+			height: 20px 
+	.content 
+		display: flex 
+		flex-direction: column 
+		font-size: 18px 
+		background-color: #F6F6F6 
+		list-style-type: none 
+		color: #ff8181 
+		padding: 20px 20px 20px 20px 
+		border-bottom-left-radius: 12px 
+		border-bottom-right-radius: 12px 
+		font-size: 13px 
+	.flipToDown 
+		animation: flipToDown 1 0.25s forwards 
+		&:not(:hover) 
+			transform: rotate(-180deg) 
+	.flipToUp 
+		animation: flipToUp 1 0.25s forwards 
+.dropdown .flipToDown, .flipToUp 
+@keyframes 
+	flipToDown 
+		from {
+    		transform: rotate(0deg) 
+	App-logo-spin 
+		from {
+    		transform: rotate(0deg) 
+		to 
+			transform: rotate(-180deg) 
+			transform: rotate(0deg) 
+			transform: rotate(90deg) 
+.text-center 
+	display: flex 
+	justify-content: center 
+.text-blue 
+	color: blue 
+.header 
+	margin-top: 20px 
+	.logo 
+		width: 145px 
+	.navbar 
+		.navbar__link 
+			text-transform: uppercase 
+			font-size: 12px 
