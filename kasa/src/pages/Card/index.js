@@ -8,14 +8,19 @@ import logements from "../../assets/logements.json";
 import starColor from "../../images/star_color.png";
 import starGrey from "../../images/star_grey.png";
 import '../../styles/App.scss';
+import Error from '../Error/';
 
 function Card( ) {
   const { logementId } = useParams()
   const logement = logements.filter((logement) => logement.id == logementId)[0]
-  /*if !logement 
-  console.log(logement);*/
-  /*if (!logement)
-    return redirect("/error")*/
+
+  let [pictureId, setPictureId] = useState(0);
+
+	if (!logement) {
+		console.log("page non trouvée");
+    return <Error />;
+	}
+
   const current = logements.indexOf(logement)
   , previousHandleClick = (e) => {
     if (pictureId > 0)
@@ -46,8 +51,6 @@ function Card( ) {
     //rating.appendChild(<img src="../../images/star_color.png"></img>);
 
     //ratingType = type === 'true' ? '<img src="star_color.png"></img>' : '<img src="start_grey.png"></img>';
-
-  let [pictureId, setPictureId] = useState(0)
   
   let previous = 0;
   let next = 0;
