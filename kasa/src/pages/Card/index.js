@@ -16,10 +16,8 @@ function Card( ) {
 
   let [pictureId, setPictureId] = useState(0);
 
-	if (!logement) {
-		console.log("page non trouvée");
+	if (!logement)
     return <Error />;
-	}
 
   const current = logements.indexOf(logement)
   , previousHandleClick = (e) => {
@@ -63,18 +61,17 @@ function Card( ) {
   else
     next = 0
 
-  console.log(logement)
     return (
       <main className="App-body">
         {
           <div className="slideshow">
-            <Slideshow url={logement.pictures[pictureId]} />
+            <Slideshow key={pictureId} url={logement.pictures[pictureId]} />
             {
               (logement.pictures != 1) ?
               <>
                 <button className="card sliderLeftButton" onClick={e => {previousHandleClick(e)}}>{""}</button>
                 <button className="card sliderRightButton" onClick={e => {nextHandleClick(e)}}>{""}</button>
-                <span class="card slideId">{(pictureId+1)+'/'+logement.pictures.length}</span>
+                <span className="card slideId">{(pictureId+1)+'/'+logement.pictures.length}</span>
               </>
               :
               <></>
@@ -106,7 +103,7 @@ function Card( ) {
               <div className="card star">
                   {
                     rating.map((star) => (
-                      <div className="card star">
+                      <div key={"s_id_"+Math.random()} className="card star">
                       {
                         star ? <img src={starColor}></img> : <img src={starGrey}></img>
                       }
@@ -121,19 +118,19 @@ function Card( ) {
             <ul className="card description">
                 {
                   <>
-                    <Dropdown id={logement.id} title={"Description"} description={logement.description}/>
-                    <Dropdown id={logement.id} title={"Equipements"} description={logement.equipments}/>
+                    <Dropdown key={"d_id_"+logement.id} id={logement.id} title={"Description"} description={logement.description}/>
+                    <Dropdown key={"e_id_"+logement.id} id={logement.id} title={"Equipements"} description={logement.equipments}/>
                   </>
                 }
             </ul>
           </div>
         </div>
-        <hr />
+{/*         <hr />
         <span className="text-center">Choix du logement</span>
         <div className="text-center">
         <Link to={"/card/" + logements[previous].id}>{"[<]  "}</Link>[{previous}] <span className="text-blue">[{current}]</span> [{next}]<Link to={"/card/" + logements[next].id}>{"  [>]"}</Link>
         </div>
-        <br />
+        <br /> */}
       </main>
     );
 }

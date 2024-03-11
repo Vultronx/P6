@@ -11,7 +11,7 @@ function About() {
         </div>
         <ul className="about">
             {values.map((value) => (
-              <Dropdown id={value.id} title={value.title} description={value.description}/>
+              <Dropdown key={"value_"+value.id} id={value.id} title={value.title} description={value.description}/>
             ))}
         </ul>
       </main>

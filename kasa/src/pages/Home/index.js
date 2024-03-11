@@ -14,7 +14,7 @@ function Home() {
         </div>
           <div className="logementWrapper">
             {logements.map((logement) => (
-              <Link className="logementLink" to={"/card/"+logement.id}>
+              <Link key={"id_"+logement.id} className="logementLink" to={"/card/"+logement.id}>
                 <div className="logement">
                   <img className="logementCover" src={logement.cover}/>
                   <div className="logementTitle">{logement.title}</div>
