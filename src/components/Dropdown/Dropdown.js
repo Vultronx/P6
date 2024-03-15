@@ -1,4 +1,5 @@
 import '../../styles/App.scss';
+import '../../styles/Dropdown.scss';
 import Element from './Element/Element.js';
 
 function Dropdown( data ) {
