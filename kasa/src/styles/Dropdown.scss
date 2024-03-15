@@ -38,22 +38,22 @@
   border-radius: 6px;
 }
 
-.card .dropdown .head {
-  padding: 10px;
-  border-radius: 10px;
+.card .dropdown {
+  .head {
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .title {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+  }
 }
 
 .about .dropdown .head {
   padding: 10px 16px 10px 16px;
   border-radius: 6px;
 }
-
-.card .dropdown .title {
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-}
-
 .about .dropdown .title {
   font-size: 26px;
 }
