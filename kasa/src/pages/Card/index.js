@@ -49,7 +49,7 @@ function Card( ) {
     //rating.appendChild(<img src="../../images/star_color.png"></img>);
 
     //ratingType = type === 'true' ? '<img src="star_color.png"></img>' : '<img src="start_grey.png"></img>';
-  
+  /* 
   let previous = 0;
   let next = 0;
   if (current > 0)
@@ -59,7 +59,7 @@ function Card( ) {
   if (current < logements.length - 1)
     next = current + 1
   else
-    next = 0
+    next = 0 */
 
     return (
       <main className="App-body">
